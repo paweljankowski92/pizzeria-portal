@@ -1,49 +1,59 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styles from './OrderWaiter.scss';
 import { Link } from 'react-router-dom';
+import { makeStyles } from '@material-ui/core/styles';
 import { Button, Container } from '@material-ui/core';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
 
 const OrderWaiter = () => (
 <Container maxWidth="sm">
   <div className={styles.component}>
     <h2>OrderWaiter view</h2>
-    <Paper className={styles.component}>
-        <Table>
-          <TableHead>
-            <TableRow>
-              <TableCell>Table</TableCell>
-              <TableCell>Status</TableCell>
-              <TableCell>Order</TableCell>
-              <TableCell>Action</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            <Button variant='outlined' size='small' color='primary'><Link to={`${process.env.PUBLIC_URL}/waiter/order/new`}>new order</Link></Button>              <TableRow>
-                <TableCell component="th" scope="row">
-                </TableCell>
-                <TableCell><Button variant='outlined' size='small' color='primary'><Link to={`${process.env.PUBLIC_URL}/waiter/order/new`}>new order</Link></Button></TableCell>
-                <TableCell>
-                  <Button variant='outlined' size='small' color='primary'><Link to={`${process.env.PUBLIC_URL}/waiter/order/new`}>new order</Link></Button>
-                </TableCell>
-              </TableRow>
-          </TableBody>
-        </Table>
-      </Paper>
-      <Button variant='outlined' size='small' color='primary'><Link to={`${process.env.PUBLIC_URL}/waiter/order/new`}>new order</Link></Button>
-      <Button variant='outlined' size='small' color='secondary'><Link to={`${process.env.PUBLIC_URL}/waiter/id`}>waiter id</Link></Button>
+    <div>
+      <Grid container spacing={3}>
+        <Grid item xs={12}>
+          <Paper></Paper>
+        </Grid>
+        <Grid item xs={6} sm={3}>
+          <Paper>Table 1</Paper>
+        </Grid>
+        <Grid item xs={6} sm={3}>
+          <Paper>Table 2</Paper>
+        </Grid>
+        <Grid item xs={6} sm={3}>
+          <Paper>Table 3</Paper>
+        </Grid>
+        <Grid item xs={6} sm={3}>
+          <Paper>Table 4</Paper>
+        </Grid>
+        <Grid item xs={6} sm={3}>
+          <Paper><Button variant='outlined' size='small' color='primary'><Link to={`${process.env.PUBLIC_URL}/waiter/order/new`}>new order</Link></Button></Paper>
+        </Grid>
+        <Grid item xs={6} sm={3}>
+          <Paper><Button variant='outlined' size='small' color='primary'><Link to={`${process.env.PUBLIC_URL}/waiter/order/new`}>new order</Link></Button></Paper>
+        </Grid>
+        <Grid item xs={6} sm={3}>
+          <Paper><Button variant='outlined' size='small' color='primary'><Link to={`${process.env.PUBLIC_URL}/waiter/order/new`}>new order</Link></Button></Paper>
+        </Grid>
+        <Grid item xs={6} sm={3}>
+          <Paper><Button variant='outlined' size='small' color='primary'><Link to={`${process.env.PUBLIC_URL}/waiter/order/new`}>new order</Link></Button></Paper>
+        </Grid>
+        <Grid item xs={6} sm={3}>
+        </Grid>
+        <Grid item xs={6} sm={3}>
+          <Paper><Button variant='outlined' size='small' color='secondary'><Link to={`${process.env.PUBLIC_URL}/waiter/id`}>Actual Order</Link></Button></Paper>
+        </Grid>
+        <Grid item xs={6} sm={3}>
+        </Grid>
+        <Grid item xs={6} sm={3}>
+          <Paper><Button variant='outlined' size='small' color='secondary'><Link to={`${process.env.PUBLIC_URL}/waiter/id`}>Actual Order</Link></Button></Paper>
+        </Grid>
+      </Grid>
+    </div>
   </div>
   </Container>
 );
 
-OrderWaiter.propTypes = {
-  children: PropTypes.node,
-};
 
 export default OrderWaiter;
